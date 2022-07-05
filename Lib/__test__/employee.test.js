@@ -1,16 +1,42 @@
-
-const { default: test } = require("node:test");
 const Employee = require("../employee");
 
 test("Can represent and instance", function () {
-    const e = new Employee();
-    expect(typeof (e)).toBe('object');
+    const emp = new Employee();
+    expect(typeof (emp)).toBe('object');
 });
-
-test("Set Id", function() {
-    const name = "Tony";
-    const e = new Employee(name);
-    expect(e.name).toBe(name);
+// Set Name with Constructor
+test("Set name", function() {
+    const name = "tony";
+    const emp = new Employee(name);
+    expect(emp.name).toBe(name);
 });
-
-test("")
+// Set Id with Constructor
+test("set id", function () {
+    const testValue = 100;
+    const emp = new Employee("tony", testValue);
+    expect(emp.id).toBe(testValue);
+});
+// Set Email with Constructor
+test("set Email", function (){
+    const testValue ="mystcoding@gmail.com";
+    const emp = new Employee("tony",1,testValue);
+    expect(emp.email).toBe(testValue);
+});
+// Get Name W/ getName()
+test("get name from command", function(){
+    const testValue = "tony";
+    const emp = new Employee(testValue);
+    expect(emp.getName()).toBe(testValue);
+});
+// Get Id W/ getId()
+test("get name from command", function(){
+    const testValue = 100;
+    const emp = new Employee("tony",testValue);
+    expect(emp.getId()).toBe(testValue);
+});
+// Get Email W/ getEmail()
+test("get email from command", function () {
+    const testValue = "mystcoding@gmail.com";
+    const emp = new Employee("tony",1,testValue);
+    expect(emp.getEmail()).toBe(testValue);
+}); 
