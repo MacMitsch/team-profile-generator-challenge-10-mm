@@ -1,0 +1,31 @@
+{
+  "name": "challenge10mm",
+  "version": "1.0.0",
+  "description": "this package is for OOP challenge 10 on team profile generators",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "jest --verbose test/*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MacMitsch/team-profile-generator-challenge-10-mm.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MacMitsch/team-profile-generator-challenge-10-mm/issues"
+  },
+  "homepage": "https://github.com/MacMitsch/team-profile-generator-challenge-10-mm#readme",
+  "dependencies": {
+    "fs": "0.0.1-security",
+    "inquirer": "^6.5.2",
+    "rx": "^4.1.0"
+  },
+  "devDependencies": {
+    "jest": "^24.9.0"
+  }
+}
