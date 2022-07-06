@@ -1,5 +1,5 @@
 
-const Employee = require("../employee");
+const Employee = require("../Lib/employee");
 
 test("Can represent and instance", function () {
     const emp = new Employee();
@@ -49,3 +49,9 @@ test("role returning employee", function () {
     const emp = new Employee("tony",1,"myst@test.com", "Employee");
     expect(emp.getRole()).toBe(testValue);
 });
+test("role returning employee", function () {
+    const testValue = "Employee";
+    const emp = new Employee("tony",1,"myst@test.com", "Employee");
+    expect(emp.getRole()).toBe(testValue);
+});
+
