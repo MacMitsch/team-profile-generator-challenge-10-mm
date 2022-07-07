@@ -30,10 +30,52 @@ function RunApp () {
                     break;
                 default:
                     htmlBuilder();
-
-
             }
         })
     }
+
+
+    // Add Engineer Function
+function addEngineer(){
+    inquirer.prompt([
+        {
+            type:"input",
+            name: "engineerName",
+            message:"What is the new engineers name?"
+        }, {
+            type:"input",
+            name: "engineerId",
+            message: "What is the Employee ID number?"
+        }, {
+            type:"input",
+            name:"engineerEmail",
+            message: "What is the new Employees Email?"
+        }, {
+            type:"input",
+            name:"engineerGithub",
+            message: "What is the Employees Github?"
+        }
+    ]).then(answers => {
+        const engineer = new Engineer(answers.engineerName,answers.engineerId,answers.engineerEmail,answers.engineerGithub);
+        teamArray.push(engineer);
+        createTeam();
+    });
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
 
