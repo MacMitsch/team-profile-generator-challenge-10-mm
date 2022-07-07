@@ -34,7 +34,6 @@ function RunApp () {
         })
     }
 
-
     // Add Engineer Function
 function addEngineer(){
     inquirer.prompt([
@@ -61,21 +60,65 @@ function addEngineer(){
         createTeam();
     });
 }
+// add Intern function
+function addIntern(){
+    inquirer.prompt([
+        {
+            type:"input",
+            name: "internName",
+            message:"What is the new Interns name?"
+        }, {
+            type:"input",
+            name: "internId",
+            message: "What is the Interns ID number?"
+        }, {
+            type:"input",
+            name:"internEmail",
+            message: "What is the new Interns Email?"
+        }, {
+            type:"input",
+            name:"internSchool",
+            message: "What is the Interns School?"
+        }
+    ]).then(answers => {
+        const intern = new Intern(answers.internName,answers.internId,answers.internEmail,answers.internSchool);
+        teamArray.push(intern);
+        createTeam();
+    });
+}
+// add Manager function
+function addManager(){
+    inquirer.prompt([
+        {
+            type:"input",
+            name: "managerName",
+            message:"What is the new Manager name?"
+        }, {
+            type:"input",
+            name: "managerId",
+            message: "What is the Manager ID number?"
+        }, {
+            type:"input",
+            name:"managerEmail",
+            message: "What is the new Manager Email?"
+        }, {
+            type:"input",
+            name:"managerOfficeNumber",
+            message: "What is the Manager's office number?"
+        }
+    ]).then(answers => {
+        const manager = new Manager(answers.managerName,answers.managerId,answers.managerEmail,answers.managerOfficeNumber);
+        teamArray.push(manager);
+        createTeam();
+    });
+}
+function htmlBuilder () {
+    console.log("Team created.")
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    fs.writeFileSync(outputPath, generateTeam(teamArray),"utf-8")
+}
+createTeam();
 
 }
 
+RunApp();
