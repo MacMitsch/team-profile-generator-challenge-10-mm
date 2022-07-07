@@ -1,4 +1,4 @@
-const Manager = require("../Lib/manager");
+const Manager = require("../lib/manager");
 
 
 test("set office number", function () {

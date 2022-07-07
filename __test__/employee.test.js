@@ -1,5 +1,5 @@
 
-const Employee = require("../Lib/employee");
+const Employee = require("../lib/employee");
 
 test("Can represent and instance", function () {
     const emp = new Employee();

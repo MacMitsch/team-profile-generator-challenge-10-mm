@@ -1,20 +1,22 @@
 
-const Intern = require("../Lib/intern");
+const Intern = require("../lib/intern");
 
-test("Set School", function (){
-    const testValue = "UMN";
-    const int = new Intern("Jason",1,"Jason@Test.com", testValue, "Intern");
-    expect(int.school).toBe(testValue);
+test("Set School", function () {
+    const testSchool = "School Name";
+    const mac = new Intern("Jason",2, "Jason@Test.com", testSchool);
+    expect(mac.school).toBe(testSchool);
+});
+
+// GetSchool()
+test("Get School via Command", function () {
+    const testSchool = "School Name";
+    const mac = new Intern("jason",2,"jason@test.com", testSchool);
+    expect(mac.getSchool()).toBe(testSchool);
 });
 // Get Intern role
-test("getRole() should return \"Intern\"", function () {
-    const testValue = "Intern";
-    const int = new Intern("jason",1,"jason@test.com", "UMN","Intern");
-    expect(int.getRole()).toBe(testValue);
+test("Test Role", function () {
+    const returnValue = "Intern";
+    const mac = new Intern("jason",2, "jason@test.com", "School Name");
+    expect(mac.getRole()).toBe(returnValue);
 });
-// GetSchool()
-test("Get School via Command", function(){
-    const testValue = "UMN";
-    const int = new Intern("jason",1,"jason@test.com", testValue, "Intern");
-    expect(int.getSchool()).toBe(testValue);
-});
+
