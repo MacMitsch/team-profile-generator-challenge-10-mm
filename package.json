@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/MacMitsch/team-profile-generator-challenge-10-mm#readme",
   "dependencies": {
+    "bootstrap": "^5.2.0-beta1",
     "fs": "0.0.1-security",
     "inquirer": "^6.5.2",
     "rx": "^4.1.0"
