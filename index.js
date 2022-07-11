@@ -17,9 +17,9 @@ function runApp () {
   function createTeam () {
     inquirer.prompt([{
       type: "list",
-      message: "What is the position of the new employee?",
+      message: "What's the position of the new employee?",
       name: "addEmployeePrompt",
-      choices: ["Manager", "Engineer", "Intern", "That's it!"]
+      choices: ["Manager", "Engineer", "Intern", "Done, Create page!"]
     }]).then(function (userInput) {
       switch(userInput.addEmployeePrompt) {
         case "Manager":
@@ -51,7 +51,7 @@ function addManager() {
     {
       type: "input",
       name: "managerId",
-      message: "What's the manager's employee ID?"
+      message: "What's the manager's ID?"
     },
 
     {
@@ -63,7 +63,7 @@ function addManager() {
     {
       type: "input",
       name: "managerNumber",
-      message: "What's the manager's phone number?"
+      message: "What's the manager's work number?"
     }
 
   ]).then(answers => {
@@ -81,25 +81,25 @@ function addEngineer() {
       {
         type: "input",
         name: "engineerName",
-        message: "What's the engineer's name?"
+        message: "What's the Engineer's name?"
       },
 
       {
         type: "input",
         name: "engineerId",
-        message: "What's the engineer's employee ID?" 
+        message: "What's the Engineer's ID?" 
       },
 
       {
         type: "input",
         name: "engineerEmail",
-        message: "What's the engineer's email?"
+        message: "What's the Engineer's email?"
       },
 
       {
         type: "input",
         name: "engineerGithub",
-        message: "What's the engineer's GitHub?"
+        message: "What's the Engineer's GitHub?"
       }
 
     ]).then(answers => {
@@ -116,25 +116,25 @@ function addEngineer() {
       {
         type: "input",
         name: "internName",
-        message: "What's the intern's name?"
+        message: "What's the Intern's name?"
       },
 
       {
         type: "input",
         name: "internId",
-        message: "What's the intern's employee ID?" 
+        message: "What's the Intern's employee ID?" 
       },
 
       {
         type: "input",
         name: "internEmail",
-        message: "What's the intern's email address?"
+        message: "What's the Intern's email address?"
       },
 
       {
         type: "input",
         name: "internSchool",
-        message: "What school does the intern attend?"
+        message: "Please list the Interns school?"
       }
 
     ]).then(answers => {
@@ -159,6 +159,8 @@ function htmlBuilder () {
     fs.writeFileSync(outputPath, generateTeam(teamArray), "UTF-8")
 
 }
+
+
 
 createTeam();
 
